@@ -1,7 +1,7 @@
 /* 视频背景容器 */
 .hero-banner {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow: hidden;
 }
@@ -9,25 +9,22 @@
 /* 视频全屏填充 */
 .bg-video {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  inset: 0;
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -1; /* 视频放底层 */
 }
 
 /* 覆盖在视频上的文字区 */
 .hero-text {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  padding: 40px;
-  max-width: 90%;
-  margin: 0 auto;
-  top: 40%;
-  transform: translateY(-50%);
+  z-index: 1;  /* 一定要比视频高 */
 }
 
 
