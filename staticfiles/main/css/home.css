@@ -64,76 +64,33 @@
   flex-wrap: wrap;
 }
 
-/* 左侧统计文字 */
-.home-testimonials-carousel .stats {
-  flex: 1;
-  min-width: 260px;
-}
-
-.home-testimonials-carousel .stats h2 {
-  font-size: 2.2em;
-  font-weight: bold;
-  color: #111;
-  margin-bottom: 10px;
-}
-
-.home-testimonials-carousel .stats p {
-  font-size: 1.1em;
-  color: #555;
-}
-
-/* 滚动容器 */
-.carousel-container {
-  flex: 2;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
+/* 动态展示品牌 */
+.brand-carousel {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 2rem 0;
 }
 
 .carousel-track {
   display: flex;
-  gap: 20px;
-  scroll-snap-align: start;
+  gap: 1rem;
+  animation: scroll 20s linear infinite;
 }
 
-/* 每个卡片 */
-.testimonial-card {
-  flex: 0 0 300px;
-  scroll-snap-align: start;
-  background-color: #f9f9f9;
-  border-left: 6px solid #4CAF50;
-  padding: 24px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  min-height: 150px;
+.carousel-track img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-
-.testimonial-card .quote {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 10px;
+/* 无限循环横向滚动动画 */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
 }
 
-.testimonial-card .author {
-  font-size: 0.9em;
-  color: #777;
-  text-align: right;
-}
-
-/* 滚动动画 */
-@keyframes scrollCarousel {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 
 /* 常见问题 */
