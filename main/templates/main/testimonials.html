@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}用户反馈 | 翠蘆花园{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'main/css/testimonials.css' %}">
+  <script src="{% static 'main/js/testimonials.js' %}" defer></script>
+
+  <section class="testimonials-section">
+    <h2>用户反馈</h2>
+    <div class="testimonial-grid">
+
+      <!-- 示例评价卡片 -->
+      <div class="testimonial-card">
+        <p class="message">“穿上这件衣服，我好像可以不再伪装自己。”</p>
+        <p class="user">—— @小如 • 北京</p>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="message">“翠蘆花园的设计总是让我感受到一种被理解的温柔。”</p>
+        <p class="user">—— @Luna • 上海</p>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="message">“不仅好看，还让我记住：我的感受很重要。”</p>
+        <p class="user">—— @Miko • 成都</p>
+      </div>
+
+    </div>
+  </section>
+{% endblock %}

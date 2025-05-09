@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}联系我们 | 翠蘆花园{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'main/css/contact.css' %}">
+  <script src="{% static 'main/js/contact.js' %}" defer></script>
+
+  <section class="contact-section">
+    <h2>联系我们</h2>
+
+    <div class="contact-info">
+      <p><strong>邮箱：</strong> info@traceyflora.com</p>
+      <p><strong>电话：</strong> 123-456-7890</p>
+    </div>
+
+    <div class="qr-section">
+      <p>扫描二维码关注我们：</p>
+      <img src="{% static 'main/images/qrcode.png' %}" alt="品牌二维码" class="qr-code">
+    </div>
+  </section>
+{% endblock %}

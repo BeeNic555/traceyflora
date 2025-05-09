@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}关于我们 | 翠蘆花园{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'main/css/about.css' %}">
+  <script src="{% static 'main/js/about.js' %}" defer></script>
+
+  <section class="about-section">
+    <h2>我们的故事</h2>
+    <p>
+      翠蘆花园 Tracey Flora 创立于追求自然与心灵和谐的初心。<br>
+      我们相信，每一件作品都传递着一种态度 —— 温柔、力量、共鸣。
+    </p>
+
+    <h3>我们的使命</h3>
+    <p>
+      为精神健康发声，为情感表达留白。<br>
+      我们致力于打造一个让人“看见彼此”的品牌。
+    </p>
+  </section>
+{% endblock %}

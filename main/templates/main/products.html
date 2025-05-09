@@ -1,0 +1,33 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}产品展示 | 翠蘆花园{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'main/css/products.css' %}">
+  <script src="{% static 'main/js/products.js' %}" defer></script>
+
+  <section class="products-section">
+    <h2>我们的产品</h2>
+    <div class="product-grid">
+
+      <!-- 示例产品卡片 -->
+      <div class="product-card">
+        <img src="{% static 'main/images/product1.jpg' %}" alt="产品1">
+        <h3>森林心语 T 恤</h3>
+        <p>一件将自然与情绪写在胸前的柔软棉质衣物。</p>
+        <a href="#" class="btn">了解更多</a>
+      </div>
+
+      <div class="product-card">
+        <img src="{% static 'main/images/product2.jpg' %}" alt="产品2">
+        <h3>晨雾绿连帽衫</h3>
+        <p>温暖的外壳，为情绪留一个出口。</p>
+        <a href="#" class="btn">了解更多</a>
+      </div>
+
+      <!-- 可继续添加更多产品 -->
+
+    </div>
+  </section>
+{% endblock %}
