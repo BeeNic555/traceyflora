@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-1)l$$s=m%j^i6f+2ej#qi6i%&5jj!x)(v2d6du513_h6%k+1gx")
+#SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-1)l$$s=m%j^i6f+2ej#qi6i%&5jj!x)(v2d6du513_h6%k+1gx")
 
-# SECRET_KEY = "django-insecure-1)l$$s=m%j^i6f+2ej#qi6i%&5jj!x)(v2d6du513_h6%k+1gx"
+SECRET_KEY = "django-insecure-1)l$$s=m%j^i6f+2ej#qi6i%&5jj!x)(v2d6du513_h6%k+1gx"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'main', 'static'),
+    os.path.join(BASE_DIR, 'main/static'),
 ]
 
 
