@@ -10,7 +10,7 @@
   <!-- Banner 大图区域 -->
   <section class="hero-banner">
   <video autoplay muted loop playsinline class="bg-video">
-    <source src="{% static 'main/videos/banner.mp4' %}" type="video/mp4">
+    <source src="{% static 'main/videos/bner.mp4' %}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
@@ -21,36 +21,17 @@
 </section>
 
   <!-- 精选用户评价区块 -->
-  <section class="home-testimonials-carousel">
-  <div class="stats">
-    <h2>超过 10,000 人</h2>
-    <p>在用我们的设计改善情绪</p>
-  </div>
-
-  <div class="carousel-container">
-    <div class="carousel-track">
-
-      <!-- 每条评论 -->
-      <div class="testimonial-card">
-        <p class="quote">“穿上这件衣服，我感觉被理解和包容了。”</p>
-        <p class="author">—— @林子涵 · 上海</p>
-      </div>
-
-      <div class="testimonial-card">
-        <p class="quote">“这是一件给我勇气的衣服，设计很贴心。”</p>
-        <p class="author">—— @雨晨 · 杭州</p>
-      </div>
-
-      <div class="testimonial-card">
-        <p class="quote">“没有标签，却最懂我，真的很喜欢。”</p>
-        <p class="author">—— @Yoyo · 广州</p>
-      </div>
-
-      <!-- 你可以继续添加更多 -->
-
-    </div>
+ <section class="brand-carousel">
+  <div class="carousel-track">
+    {% for img in image_list %}
+      <img src="{% static img %}" alt="品牌展示 {{ forloop.counter }}">
+    {% endfor %}
+    {% for img in image_list %}
+      <img src="{% static img %}" alt="品牌展示重复">
+    {% endfor %}
   </div>
 </section>
+
 
 <section class="faq-section">
   <div class="faq-title">

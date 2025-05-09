@@ -1,0 +1,20 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}品牌展示 | 翠蘆花园{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'main/css/showcase.css' %}">
+  <script src="{% static 'main/js/showcase.js' %}" defer></script>
+
+  <section class="showcase-gallery">
+    <h2 class="gallery-title">品牌展示</h2>
+    <div class="gallery-grid">
+      {% for img in image_list %}
+        <div class="gallery-item">
+          <img src="{% static img %}" alt="品牌图 {{ forloop.counter }}">
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
