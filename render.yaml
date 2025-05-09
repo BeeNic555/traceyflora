@@ -6,4 +6,8 @@ services:
     startCommand: "gunicorn traceygarden.wsgi:application"
     preDeployCommand: "python manage.py migrate && python manage.py collectstatic --noinput"
     staticPublishPath: staticfiles
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: traceygarden.settings
+
 
