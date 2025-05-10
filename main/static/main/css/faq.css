@@ -1,0 +1,36 @@
+.faq-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f7fdf5;
+}
+
+.faq-title {
+  font-size: 2rem;
+  color: #3c8031;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid #d0e5cc;
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  color: #3c8031;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0.5rem 0 1rem 0;
+  color: #333;
+}

@@ -59,3 +59,5 @@ def showcase(request):
     ]
     return render(request, 'main/showcase.html', {'image_list': image_list})
 
+def faq(request):
+    return render(request, 'main/faq.html')

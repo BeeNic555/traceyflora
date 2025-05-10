@@ -1,0 +1,44 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}常见问题 | 翠囍花园{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'main/css/faq.css' %}">
+<script src="{% static 'main/js/faq.js' %}" defer></script>
+
+<section class="faq-page">
+  <h1 class="faq-title">常见问题</h1>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question">翠囍花园有哪些服务项目？</button>
+      <div class="faq-answer">
+        <p>我们提供但不限于：鲜花花束、绿植造景、绿植养护、企业沙龙活动及园林设计。如需了解更多，欢迎联系我们。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">是否需要提前预约？是否接受团体包场？</button>
+      <div class="faq-answer">
+        <p>我们目前采取预约制，并支持团体包场。请通过我们的联系方式与我们取得联系。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">没有花艺或绿植经验也可以参加课程吗？</button>
+      <div class="faq-answer">
+        <p>当然可以！我们的课程从零基础开始，适合所有对植物和美好生活感兴趣的人。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">是否适合亲子同行？</button>
+      <div class="faq-answer">
+        <p>欢迎亲子家庭一同参与，我们也会不定期开展适合儿童的自然体验课程。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
