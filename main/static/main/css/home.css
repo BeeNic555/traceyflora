@@ -77,8 +77,8 @@
 
 .carousel-track {
   display: flex;
-  gap: 1rem;
-  animation: scroll 20s linear infinite;
+  width: max-content; /* 自动根据图片撑开 */
+  animation: scroll 40s linear infinite;
 }
 
 .carousel-track img {
@@ -90,11 +90,13 @@
 
 /* 无限循环横向滚动动画 */
 @keyframes scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* 滚动到一半刚好接上下一轮 */
+  }
 }
-
-
 
 /* 常见问题 */
 .faq-section {
