@@ -12,9 +12,16 @@
     <div class="gallery-grid">
       {% for img in image_list %}
         <div class="gallery-item">
-          <img src="{% static img %}" alt="品牌图 {{ forloop.counter }}">
+          <img class="preview-img" src="{% static img %}" alt="品牌图 {{ forloop.counter }}">
         </div>
       {% endfor %}
+
+    </div>
+
+    <!-- 模态弹窗 -->
+    <div id="modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modal-img">
     </div>
   </section>
 {% endblock %}

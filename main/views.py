@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render
+from .models import Category, Product
 
 def home(request):
     image_list = [
@@ -19,7 +20,6 @@ def home(request):
     ]
     return render(request, 'main/home.html', {'image_list': image_list})
 
-
 def about(request):
     return render(request, 'main/about.html')
 
@@ -27,7 +27,21 @@ def contact(request):
     return render(request, 'main/contact.html')
 
 def products(request):
-    return render(request, 'main/products.html')
+    categories = Category.objects.all()
+    category_id = request.GET.get('category')
+
+    if category_id:
+        selected_category = Category.objects.get(id=category_id)
+        products = Product.objects.filter(category=selected_category)
+    else:
+        selected_category = None
+        products = Product.objects.all()
+
+    return render(request, 'main/products.html', {
+        'categories': categories,
+        'selected_category': selected_category,
+        'products': products
+    })
 
 def showcase(request):
     image_list = [

@@ -1,33 +1,50 @@
 {% extends "main/base.html" %}
 {% load static %}
-
 {% block title %}产品展示 | 翠囍花园{% endblock %}
 
 {% block content %}
   <link rel="stylesheet" href="{% static 'main/css/products.css' %}">
-  <script src="{% static 'main/js/products.js' %}" defer></script>
 
-  <section class="products-section">
-    <h2>我们的产品</h2>
-    <div class="product-grid">
+  <div class="product-page">
+    <!-- 左侧分类 -->
+    <aside class="category-sidebar">
+      <h3>产品分类</h3>
+      <ul>
+        {% for category in categories %}
+          <li>
+            <a href="{% url 'products' %}?category={{ category.id }}"
+               class="{% if selected_category and selected_category.id == category.id %}active{% endif %}">
+              {{ category.name }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
 
-      <!-- 示例产品卡片 -->
-      <div class="product-card">
-        <img src="{% static 'main/images/product1.jpg' %}" alt="产品1">
-        <h3>森林心语 T 恤</h3>
-        <p>一件将自然与情绪写在胸前的柔软棉质衣物。</p>
-        <a href="#" class="btn">了解更多</a>
+    <!-- 右侧产品 -->
+    <section class="product-section">
+      {% if selected_category %}
+        <h2>{{ selected_category.name }}</h2>
+      {% else %}
+        <h2>全部产品</h2>
+      {% endif %}
+      <div class="product-grid">
+        {% for product in products %}
+          <div class="product-card">
+            {% if product.image %}
+              <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+              <img src="{% static 'main/images/logo.jpg' %}" alt="默认图片">
+            {% endif %}
+            <h4>{{ product.name }}</h4>
+            <p>{{ product.description }}</p>
+          </div>
+        {% empty %}
+          <p>该分类下暂无产品。</p>
+        {% endfor %}
       </div>
-
-      <div class="product-card">
-        <img src="{% static 'main/images/product2.jpg' %}" alt="产品2">
-        <h3>晨雾绿连帽衫</h3>
-        <p>温暖的外壳，为情绪留一个出口。</p>
-        <a href="#" class="btn">了解更多</a>
-      </div>
-
-      <!-- 可继续添加更多产品 -->
-
-    </div>
-  </section>
+    </section>
+  </div>
 {% endblock %}
+
+
